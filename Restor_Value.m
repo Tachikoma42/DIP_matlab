@@ -1,3 +1,3 @@
-function  Rvalue=Restor_Value(quan_err,pre_val)
-	Rvalue=quan_err+pre_val;
+function  restortVal = Restor_Value(encodedByQuant, predictVal)
+	restortVal = encodedByQuant + predictVal;
 end

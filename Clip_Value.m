@@ -1,9 +1,9 @@
-function Cvalue=Clip_Value(res_val)
-	if (res_val<0)
-		Cvalue=0;
-	elseif(res_val>255)  
-		Cvalue=255;       
+function retVal=Clip_Value(restortVal)
+	if (restortVal<0)
+		retVal=0;
+	elseif(restortVal>255)
+		retVal=255;
 	else
-		Cvalue=res_val;       
+		retVal=restortVal;
 	end
 end

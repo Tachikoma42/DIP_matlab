@@ -13,20 +13,15 @@
 %     end 
 % end
 
-function outFrame = Error_Code(frame, dim)
+function outFrame = Error_Code(frame,qError, dim)
     [row, col] = size(frame);
     slice = double(frame);
     outFrame = zeros(row,col);
+    qError(100,100)= 255;
     for i = 1:row
         for j = 1:col
             predictVal = Predict_Value(slice, i, j, col, dim);
-            predictErr = frame(i,j) -predictVal;
-            if i==10
-                predictErr = 128;
-            end
-            if j == 10
-                predictErr = 128;
-            end
+            predictErr = qError(i,j);
             encodedByQuant = Quant_Value(predictErr);
             restortVal = Restor_Value(encodedByQuant,predictVal);
             outFrame(i, j) = Clip_Value(restortVal);

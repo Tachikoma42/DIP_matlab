@@ -12,7 +12,7 @@
 %     end 
 % end
 
-function outFrame = Dpcm_code(frame, dim)
+function [outFrame,qError] = Dpcm_code(frame, dim)
     [row, col] = size(frame);
     slice = double(frame);
     outFrame = zeros(row,col);
@@ -21,6 +21,7 @@ function outFrame = Dpcm_code(frame, dim)
             predictVal = Predict_Value(slice, i, j, col, dim);
             predictErr = frame(i,j) -predictVal;
             encodedByQuant = Quant_Value(predictErr);
+            qError(i,j) = encodedByQuant;
             restortVal = Restor_Value(encodedByQuant,predictVal);
             outFrame(i, j) = Clip_Value(restortVal);
         end

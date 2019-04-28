@@ -36,6 +36,10 @@ function outBtc = singleBtc(inBtc,dim)
         pixLower = totalPixHigher/numberPixHigher;
         pixLower = uint8(pixLower);
     end
+    
+        if numberPixHigher == totalPixNumber
+            pixHighter = threshold;
+        end
 
     for i = 1:dim
         for j = 1:dim

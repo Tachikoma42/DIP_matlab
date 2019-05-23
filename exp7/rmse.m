@@ -7,5 +7,5 @@ function [difference, rmse] = rmse(frame, outFrame)
     [row, col]=size(frame);
     difference =double(frame) - double(outFrame);
     rmse=sqrt(sum(difference(:).^2) / (row * col));
-    difference =  (difference);
+
 end

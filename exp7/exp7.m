@@ -1,6 +1,6 @@
 frame = imread('lena.bmp');
 dim = 8;
-scale = 10;
+scale = 2;
 DCTch = 10;
 
 subplot(231);
@@ -19,7 +19,7 @@ title(strcat('restruct pic when dct Coefficient = ', num2str(DCTch)));
 
 [difference1, rmse1]= rmse(frame, outFrame1);
 subplot(234);
-imhist(difference1);
+histogram(difference1);
 title(strcat('difference histro & rmse = ',num2str(rmse1)));
 
 outFrame2 = encodeJpeg(dctFreq, scale, dim);%QuanIQuan
@@ -29,5 +29,5 @@ title(strcat('restrcut pic when scale is ',num2str(scale)));
 
 [difference2, rmse2]= rmse(frame, outFrame2);
 subplot(236);
-imshow(uint8(abs(difference2)));
+imshow(displayCalibration(difference2));
 title(strcat('difference after quantization rmse = ',num2str(rmse2)));

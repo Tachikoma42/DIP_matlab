@@ -28,15 +28,3 @@ reFrame = uint8(double(errFrame) + double(predFrame));
 subplot(236);
 imshow(reFrame);
 title('restruct frame');
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,8 +2,6 @@ function outframe = btcCode(frame,dim)
 %btcCode - use singleBtc.m to calculate every single btc and combine them together
 %
 % Syntax: outframe = btcCode(frame,dim)
-%
-% Long description
     [row,col] = size(frame);
     subRow = row/dim;
     subCol = col/dim;

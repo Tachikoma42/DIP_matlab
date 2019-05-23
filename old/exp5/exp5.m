@@ -25,6 +25,7 @@ resErr1D = Error_Code(claP,qError1, 1);
 error1 = uint8(abs(double(res1D)-double(resErr1D))*n);
 %error1 = Clip_Value(error1);
 imshow(resErr1D);
+title('resErr1D');
 
 
 subplot(236);
@@ -33,3 +34,4 @@ resErr2D = Error_Code(claP,qError2, 2);
 error2 = uint8(abs(double(res2D)-double(resErr2D))*n);
 %error2 = Clip_Value(error2);
 imshow(resErr2D);
+title('resErr2D');

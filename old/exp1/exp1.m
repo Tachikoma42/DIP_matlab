@@ -1,7 +1,4 @@
-f = imread('pic\lena.bmp'); % ????
-%f = mat2gray(f, [0 255]);
-% 
-figure();
+f = imread('lena.bmp'); % ???? 
 subplot(3,3,1);
 imshow(f);
 title('Original picture');% ?????
@@ -22,22 +19,22 @@ C = 1;
 Gamma1 = 4;
 Gamma2 = 1;
 gamma3 = 0.4;
-g = mat2gray(f, [0 255]);
+g = double(g);
 g3 = C * (g.^Gamma1); % ? > 1
 g4 = C * (g.^Gamma2); % ? = 1
 g5 = C * (g.^gamma3); % ? < 1
-
+g = uint8(g);
 subplot(3,3,4);
 imshow(g3);
-title('? > 1'); 
+title('gamma > 1'); 
 
 subplot(3,3,5);
 imshow(g4);
-title('? = 1');
+title('gamma = 1');
 
 subplot(3,3,6);
 imshow(g5);
-title('? < 1');
+title('gamma < 1');
 
 subplot(3,3,7);
 ImHist(f); 
